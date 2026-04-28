@@ -16,11 +16,16 @@ import { ArrowRight, Download } from 'lucide-vue-next'
                 </p>
                 <div class="flex flex-col gap-2 pt-1 sm:flex-row">
                     <Button variant="outline" class="w-full sm:w-auto">
-                        View My Work
-                        <ArrowRight />
+                        <a href="#projects" class="flex items-center gap-2">
+                            See My Work
+                            <ArrowRight />
+                        </a>
                     </Button>
                     <Button variant="outline" class="w-full sm:w-auto">
-                        Resume
+                        <a href="https://drive.google.com/file/d/1PJqsYIwPQVyIQvK4mzRqZ-F9A5mNyl-6/view?usp=sharing"
+                            target="_blank" rel="noopener noreferrer">
+                            Resume
+                        </a>
                         <Download />
                     </Button>
                 </div>
