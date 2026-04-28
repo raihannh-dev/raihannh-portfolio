@@ -1,7 +1,9 @@
 export type Project = {
-    id: number;
-    title: string;
-    description: string;
-    image: string;
-    link: string;
-}
+  id: number;
+  title: string;
+  description: string;
+  techStack: string[];
+  image: string;
+  demoUrl: string;
+  repoUrl: string;
+};

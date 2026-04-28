@@ -2,31 +2,62 @@
 import {
     Card,
     CardContent,
+    CardFooter,
     CardTitle,
 } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
 import { projects } from '@/data/projects'
+import { ArrowUpRight, Github } from 'lucide-vue-next'
 
 </script>
 
 <template>
-    <section id="projects" class="space-y-4">
-        <header class="my-12">
+    <section id="projects" class="my-12 space-y-6">
+        <header class="my-8 sm:my-12">
             <h2 class="text-2xl font-semibold">
-                Stuff I’ve Developed Successfully </h2>
+                Stuff I've Developed Successfully </h2>
             <p class="text-base text-muted-foreground">
                 Turning ideas into meaningful digital products.
                 <br />
                 Crafted with precision and purpose.
             </p>
         </header>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Card v-for="project in projects" :key="project.id">
-                <CardContent>
-                    <CardTitle class="font-semibold text-foreground mb-2">{{ project.title
-                    }}</CardTitle>
-                    <p class="text-sm text-foreground/80 leading-relaxed mb-3">
-                        {{ project.description }}</p>
+        <div class="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2 xl:grid-cols-3">
+            <Card v-for="project in projects" :key="project.id"
+                class="group overflow-hidden border-border/70 bg-card pt-0">
+                <div class="relative aspect-video w-full overflow-hidden border-b border-border/60">
+                    <img :src="project.image" :alt="project.title"
+                        class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                </div>
+
+                <CardContent class="space-y-3 py-3 sm:py-4">
+                    <div class="space-y-1.5">
+                        <CardTitle class="text-base font-semibold text-foreground">{{ project.title }}
+                        </CardTitle>
+
+                        <div class="flex flex-wrap gap-1.5">
+                            <Badge variant="outline" class="text-xs text-muted-foreground"
+                                v-for="stack in project.techStack" :key="stack">{{ stack }}
+                            </Badge>
+                        </div>
+                        <p class="text-sm line-clamp-3 leading-relaxed text-foreground/80">
+                            {{ project.description }}
+                        </p>
+                    </div>
                 </CardContent>
+
+                <CardFooter class="justify-between border-t border-border/60 pt-3 pb-4">
+                    <a :href="project.demoUrl" target="_blank" rel="noreferrer"
+                        class="inline-flex items-center gap-1.5 text-xs font-medium text-foreground transition-colors hover:text-primary sm:text-sm">
+                        Live Demo
+                        <ArrowUpRight class="size-4" />
+                    </a>
+                    <a :href="project.repoUrl" target="_blank" rel="noreferrer"
+                        class="inline-flex items-center gap-1.5 text-xs font-medium text-foreground transition-colors hover:text-primary sm:text-sm">
+                        Source Code
+                        <Github class="size-4" />
+                    </a>
+                </CardFooter>
             </Card>
         </div>
     </section>

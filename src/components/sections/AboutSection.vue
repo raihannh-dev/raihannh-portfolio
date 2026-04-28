@@ -12,6 +12,17 @@ import { techStack, certifications } from '@/data/about';
             </p>
         </header>
 
+        <ul class="grid grid-cols-3 gap-2 text-xs md:hidden">
+            <li><a href="#me"
+                    class="flex justify-center rounded-md border border-border/70 bg-muted/30 px-2 py-2">Me</a></li>
+            <li><a href="#tech-stack"
+                    class="flex justify-center rounded-md border border-border/70 bg-muted/30 px-2 py-2">Stack</a>
+            </li>
+            <li><a href="#certifications"
+                    class="flex justify-center rounded-md border border-border/70 bg-muted/30 px-2 py-2">Certs</a>
+            </li>
+        </ul>
+
         <div class="grid grid-cols-1 gap-8 md:grid-cols-12">
             <aside class="md:col-span-3">
                 <div class="md:sticky md:top-24 space-y-6 rounded-xl border border-border/70 bg-muted/30 p-5">
@@ -68,7 +79,10 @@ import { techStack, certifications } from '@/data/about';
                     <ul class="space-y-2 text-sm md:text-base">
                         <li v-for="certificate in certifications" :key="certificate.id" class="flex items-start gap-2">
                             <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-foreground/70" />
-                            <a href={{ certificate.Link }} class="leading-relaxed">{{ certificate.desc }}</a>
+                            <a :href="certificate.link" target="_blank" rel="noreferrer"
+                                class="leading-relaxed hover:underline">
+                                {{ certificate.desc }}
+                            </a>
                         </li>
                     </ul>
                 </section>
