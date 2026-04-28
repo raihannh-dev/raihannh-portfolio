@@ -22,7 +22,7 @@ import { ArrowUpRight, Github } from 'lucide-vue-next'
                 Crafted with precision and purpose.
             </p>
         </header>
-        <div class="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div class="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-3">
             <Card v-for="project in projects" :key="project.id"
                 class="group overflow-hidden border-border/70 bg-card pt-0">
                 <div class="relative aspect-video w-full overflow-hidden border-b border-border/60">
