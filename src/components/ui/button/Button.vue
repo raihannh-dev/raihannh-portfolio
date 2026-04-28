@@ -4,7 +4,7 @@ import type { ButtonVariants } from "."
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "."
 
-interface Props extends HTMLAttributes {
+interface Props extends /* @vue-ignore */ HTMLAttributes {
   variant?: ButtonVariants["variant"]
   size?: ButtonVariants["size"]
 }
