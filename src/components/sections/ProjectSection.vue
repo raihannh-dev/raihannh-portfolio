@@ -2,12 +2,11 @@
 import {
     Card,
     CardContent,
-    CardFooter,
     CardTitle,
 } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { projects } from '@/data/projects'
-import { ArrowUpRight, Github, Lock } from 'lucide-vue-next'
+import { ArrowUpRight, Github } from 'lucide-vue-next'
 
 </script>
 
