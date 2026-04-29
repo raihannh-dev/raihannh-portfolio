@@ -6,4 +6,5 @@ export type Project = {
   image: string;
   demoUrl: string;
   repoUrl: string;
+  isPrivate?: boolean;
 };

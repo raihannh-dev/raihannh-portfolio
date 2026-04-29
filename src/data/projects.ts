@@ -16,6 +16,7 @@ export const projects: Project[] = [
     image: Project1Image,
     demoUrl: "#",
     repoUrl: "#",
+    isPrivate: true,
   },
   {
     id: 2,
@@ -26,6 +27,7 @@ export const projects: Project[] = [
     image: Project2Image,
     demoUrl: "#",
     repoUrl: "#",
+    isPrivate: true,
   },
   {
     id: 3,
@@ -44,8 +46,8 @@ export const projects: Project[] = [
       "Sistem CRM terpadu untuk ISP dengan 4 peran pengguna, mengelola tiket layanan, pembayaran, dan otomatisasi alur kerja pelanggan.",
     techStack: ["Next.js", "FastAPI", "MySQL", "Full Stack"],
     image: Project4Image,
-    demoUrl: "",
-    repoUrl: "#",
+    demoUrl: "#",
+    repoUrl: "https://github.com/INvFaker/crm-isp",
   },
   {
     id: 5,
@@ -55,7 +57,7 @@ export const projects: Project[] = [
     techStack: ["React.js", "Express", "Prisma", "MySQL", "Leaflet"],
     image: Project5Image,
     demoUrl: "https://pusgo.vercel.app/",
-    repoUrl: "#",
+    repoUrl: "https://github.com/abdillahmufki/Capstone-dicoding-react",
   },
   {
     id: 6,
@@ -65,6 +67,6 @@ export const projects: Project[] = [
     techStack: ["Laravel", "MySQL", "Tailwind CSS", "CMS"],
     image: Project6Image,
     demoUrl: "https://spesialiscetakkaret.com/",
-    repoUrl: "#",
+    repoUrl: "https://github.com/Azriel16/FajarIndoRubber",
   },
 ];
