@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import Landing from './components/Landing.vue'
+import { RouterView } from 'vue-router'
 </script>
 
 <template>
-  <Landing />
+  <RouterView />
 </template>
+

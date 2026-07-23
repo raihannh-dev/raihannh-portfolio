@@ -1,15 +1,36 @@
 <script setup lang="ts">
 import { techStack, certifications } from '@/data/about';
+import { Button } from '@/components/ui/button';
+import { ArrowRight, ArrowLeft } from 'lucide-vue-next';
+import { RouterLink } from 'vue-router';
+
+defineProps<{
+    isOverview?: boolean
+}>()
 </script>
 
 <template>
     <section id="about" class="my-12 space-y-6">
-        <header class="max-w-2xl space-y-2">
-            <h2 class="text-2xl font-semibold tracking-tight">Who I Am.</h2>
-            <p class="text-sm text-muted-foreground md:text-base">
-                Passionate about building thoughtful digital experiences, driven by curiosity,
-                creativity, and continuous growth.
-            </p>
+        <header class="flex items-start justify-between max-w-3xl gap-4">
+            <div class="space-y-2">
+                <h2 class="text-2xl font-semibold tracking-tight">Who I Am.</h2>
+                <p class="text-sm text-muted-foreground md:text-base">
+                    Passionate about building thoughtful digital experiences, driven by curiosity,
+                    creativity, and continuous growth.
+                </p>
+            </div>
+            <Button v-if="isOverview" variant="ghost" size="sm" as-child class="hidden sm:inline-flex shrink-0">
+                <RouterLink to="/about" class="flex items-center gap-1.5 text-xs font-medium">
+                    More Details
+                    <ArrowRight class="size-3.5" />
+                </RouterLink>
+            </Button>
+            <Button v-else variant="ghost" size="sm" as-child class="inline-flex shrink-0">
+                <RouterLink to="/" class="flex items-center gap-1.5 text-xs font-medium">
+                    <ArrowLeft class="size-3.5" />
+                    Back to Home
+                </RouterLink>
+            </Button>
         </header>
 
         <ul class="grid grid-cols-3 gap-2 text-xs md:hidden">
@@ -37,7 +58,7 @@ import { techStack, certifications } from '@/data/about';
                         </li>
                         <li class="flex items-center gap-2">
                             <span class="text-muted-foreground">03</span>
-                            <a href="#certifications" class="transition-colors hover:text-primary">certifications</a>
+                            <a href="#certifications" class="transition-colors hover:text-primary">Certifications</a>
                         </li>
                     </ul>
                 </div>
@@ -87,6 +108,15 @@ import { techStack, certifications } from '@/data/about';
                     </ul>
                 </section>
             </div>
+        </div>
+
+        <div v-if="isOverview" class="flex justify-end pt-2 sm:hidden">
+            <Button variant="ghost" size="sm" as-child>
+                <RouterLink to="/about" class="flex items-center gap-1.5 text-xs font-medium">
+                    More Details
+                    <ArrowRight class="size-3.5" />
+                </RouterLink>
+            </Button>
         </div>
     </section>
 </template>

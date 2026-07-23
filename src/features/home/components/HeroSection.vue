@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { Button } from '@/components/ui/button'
 import { ArrowRight, Download } from 'lucide-vue-next'
+import { RouterLink } from 'vue-router'
 </script>
 
 <template>
@@ -15,18 +16,18 @@ import { ArrowRight, Download } from 'lucide-vue-next'
                     I build cool stuff on the web, from what users see to what makes it work behind the scenes.
                 </p>
                 <div class="flex flex-col gap-2 pt-1 sm:flex-row">
-                    <Button variant="outline" class="w-full sm:w-auto">
-                        <a href="#projects" class="flex items-center gap-2">
+                    <Button variant="outline" class="w-full sm:w-auto" as-child>
+                        <RouterLink to="/projects" class="flex items-center gap-2">
                             See My Work
-                            <ArrowRight />
-                        </a>
+                            <ArrowRight class="size-4" />
+                        </RouterLink>
                     </Button>
                     <Button variant="outline" class="w-full sm:w-auto">
                         <a href="https://drive.google.com/file/d/1PJqsYIwPQVyIQvK4mzRqZ-F9A5mNyl-6/view?usp=sharing"
                             target="_blank" rel="noopener noreferrer">
                             Resume
                         </a>
-                        <Download />
+                        <Download class="size-4" />
                     </Button>
                 </div>
             </div>
